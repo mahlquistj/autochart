@@ -180,6 +180,10 @@ See the [engine docs](docs/engine-integration.md).
 You'll need Node 24 and the build tools for FFmpeg
 ([details](docs/ffmpeg-source-status.md)).
 
+With [Nix](https://nixos.org) you can skip that setup: `nix develop` gives a shell with
+Node, FFmpeg, Electron and the rest from nixpkgs, and `nix build .#autochart` builds the
+app. See [Nix](docs/nix.md).
+
 ```bash
 npm ci
 npm run ffmpeg:prepare
@@ -188,6 +192,11 @@ npm run electron:dev
 
 To package, run `npm run dist:linux`, `dist:win`, or `dist:mac` on that system.
 See [development](docs/development.md) for the rest.
+
+With [Nix](https://nixos.org) you can skip the toolchain setup instead:
+`nix develop` gives you the dev shell (Node, FFmpeg and Electron from nixpkgs), and
+`nix build .#autochart` builds the app and runs it on the nixpkgs Electron runtime.
+See [Nix](docs/nix.md).
 
 ## Feedback
 
